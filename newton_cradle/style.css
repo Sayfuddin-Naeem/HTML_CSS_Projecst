@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 100vh;
+    background-color: #1A1826;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.cradle{
+    width: 60rem;
+    height: 50rem;
+    background-color: transparent;
+    border-top: 2rem solid #cc52b9;
+    border-right: 2rem solid #bb7fb2;
+    border-left: 2rem solid #bb7fb2;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.9rem;
+    position: relative;
+    transform: skewX(-3deg)
+}
+
+.cradle div{
+    width: 1rem;
+    height: 20rem;
+    margin-top: -0.8rem;
+    background-color: #cc52b9;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 95%;
+        left: -1.5rem;
+        width: 2rem;
+        aspect-ratio: 1;
+        background-color: #a7619d;
+        box-shadow: 0 0 2rem 0.2rem #cc52b9;
+        border: 1rem solid #cc52b9;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+
+    &:first-child{
+        animation: left 2s linear infinite;
+        transform-origin: top left;
+        -webkit-animation: left 2s linear infinite;
+    }
+    &:last-child{
+        animation: right 2s linear 1s infinite;
+        animation-direction: reverse;
+        transform-origin: top left;
+        -webkit-animation: right 2s linear 1s infinite;
+    }
+}
+
+@keyframes left{
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 50deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+@keyframes right{
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -50deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
