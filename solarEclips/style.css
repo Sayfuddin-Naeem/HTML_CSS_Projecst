@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #FEE4D6;
+}
+
+.container{
+    width: 40vw;
+    aspect-ratio: 1;
+    background-color: #ffbb5c;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgChange 10s ease-in-out infinite;
+}
+
+@keyframes bgChange{
+    0%{
+        background-color: #ffbb5c;
+    }
+    25%{
+        background-color: #fcbf49;
+    }
+    50%{
+        background-color: #000;
+    }
+    75%{
+        background-color: #fcbf49;
+    }
+    100%{
+        background-color: #ffbb5c;
+    }
+    
+}
+
+main{
+    width: 18vw;
+    aspect-ratio: 1;
+    background-color: #E25E3F;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        content: '';
+        width: inherit;
+        aspect-ratio: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        border-radius: 50%;
+        animation: solarEclipse 10s ease-in-out infinite;
+    }
+}
+
+@keyframes solarEclipse{
+    0%{
+        translate: 100%;
+        scale: 1;
+    }
+    50%{
+        translate: 0%;
+        scale: 0.95;
+        box-shadow: rgba(255, 255, 255, 0.6) 0px 48px 100px 0px;
+    }
+    100%{
+        translate: -100%;
+        scale: 0.95;
+    }
+}
